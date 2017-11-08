@@ -13,3 +13,6 @@ Tasks:
 5. become rich af!
 
 Everyone is welcome, but for Fabrice, Ralph, Tobias, Phillip, and Jakob this is mandatory!
+
+NEXT STEPS:
+Create new GITHUB branches and send pull requests to the team members, for them to verify the ideas, make recommendations and last but not least decide on which idea to follow up.

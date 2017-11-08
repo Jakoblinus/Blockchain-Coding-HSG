@@ -1,8 +1,8 @@
 # Blockchain-Coding-HSG
 Blockchain project of highly ambitious SAP workers &amp; HSG students.
 
-Initially we just had to write a short programm using Python to become certified Python coders.
-Now we have become enthusiastic programmers with the will and ambition to code the next big blockchain programm.
+Initially we just had to write a short program using Python to become certified Python coders.
+Now we have become enthusiastic programers with the will and ambition to code the next big blockchain program.
 Be ready and become active.
 
 Tasks:

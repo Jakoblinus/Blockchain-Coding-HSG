@@ -1,0 +1,110 @@
+import json
+import requests
+import hashlib as hasher
+import datetime as date
+import random
+
+while True:
+  data = str(input("Your name please"))
+  # Define what a  block is
+  class Block:
+    def __init__(self, index, timestamp, data, previous_hash):
+      self.index = index
+      self.timestamp = timestamp
+      self.previous_hash = previous_hash
+      self.hash = self.hash_block()
+    
+    def hash_block(self):
+          sha = hasher.sha256()
+          seq = (str(x) for x in (
+                 self.index, self.timestamp, self.previous_hash))
+          sha.update(''.join(seq).encode('utf-8'))
+          return sha.hexdigest()
+  
+  # Generate genesis block
+  def create_genesis_block():
+    # Manually construct a block with
+    # index zero and arbitrary previous hash
+    return Block(0, date.datetime.now(), {
+      "proof-of-work": 9,
+      "transactions": None
+    }, "0")
+  
+  def get_blocks():
+    chain_to_send = blockchain
+    blocklist = ""
+    for i in range(len(chain_to_send)):
+      block = chain_to_send[i]
+      block_index = str(block.index)
+      block_timestamp = str(block.timestamp)
+      block_data = data
+      block_hash = block.hash
+      assembled = json.dumps({
+      "index": block_index,
+      "timestamp": block_timestamp,
+      "data": block_data,
+      "hash": block_hash
+      })
+      if blocklist == "":
+        blocklist = assembled
+      else:
+        blocklist += assembled
+    return blocklist
+  
+  def next_block(last_block, data=''):
+      idx = last_block.index + 1
+      block = Block(index=idx,
+        timestamp=date.datetime.now(),
+        data='{}{}'.format(data, idx),
+        previous_hash=last_block.hash)
+      return block
+    
+  blockchain = []
+  num_of_blocks = int(input("Enter the number of financial transactions of today: "))
+  
+  
+  blockchain.append(create_genesis_block())
+    
+  # A completely random address of the owner of this node
+  miner_address = "q3nf394hjg-random-miner-address-34nf3i4nflkn3oi"
+  # This node's blockchain copy
+  
+  
+  # Store the transactions that
+  # this node has in a list
+  this_nodes_transactions = []
+  # Store the url data of every
+  # other node in the network
+  # so that we can communicate
+  # with them
+  peer_nodes = []
+  # A variable to deciding if we're mining or not
+  mining = True  
+    
+  
+  prev_block = blockchain[0]
+  for _ in range(0, num_of_blocks):
+    global user_input
+    user_input = input("Enter the description of your transaction: ")
+    block = next_block(prev_block, data=user_input)
+    blockchain.append(block)
+    prev_block = block
+    print('{}: '.format(block), user_input)
+    print('Hash: {}\n'.format(block.hash))
+    
+  question = str(input("Are there other users?"))
+  if question == ("yes"):
+    continue
+  else:
+    break
+
+x=get_blocks()
+
+today_transaction = input("Do you want to print today's transactions? ('y' or 'n')")
+if today_transaction == "y":
+#  print (user_input)
+  print (x)
+elif today_transaction == "n":
+  print("Have a good day!")
+else:
+  print("Invalid input!")

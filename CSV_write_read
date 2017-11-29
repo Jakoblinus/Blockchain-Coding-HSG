@@ -1,9 +1,9 @@
 import csv  
-with open(r"C:\Users\i326721\Desktop\Test.csv", newline="") as myFile:    
+with open(r"file-path", newline="") as myFile:    
   reader = csv.reader(myFile)    
   for row in reader:        
     print(row)
 
-myFile = open(r"C:\Users\i326721\Desktop\Test.csv",'w')
+myFile = open(r"file-path",'w')
 myFile.write('hi there, hello now\n') 
 myFile.close()

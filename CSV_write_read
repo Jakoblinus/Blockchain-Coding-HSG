@@ -1,0 +1,9 @@
+import csv  
+with open(r"C:\Users\i326721\Desktop\Test.csv", newline="") as myFile:    
+  reader = csv.reader(myFile)    
+  for row in reader:        
+    print(row)
+
+myFile = open(r"C:\Users\i326721\Desktop\Test.csv",'w')
+myFile.write('hi there, hello now\n') 
+myFile.close()

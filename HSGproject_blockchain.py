@@ -5,7 +5,7 @@ import json
 
 a = str(input("Your name please: "))
 usernames = ["Jordi", "Phillip"]
-userdata = ["ID: 1, money available: 200", "ID": 2, money: 100"]
+userdata = ["ID: 1, money available: 200", "ID: 2, money: 100"]
 if a == "Jordi" in usernames:
   print("Hello", a)
   print(userdata[0])
